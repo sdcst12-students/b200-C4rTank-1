@@ -1,56 +1,95 @@
 #!python3
 
+def getIntegers(INTERGERS_LIST, OTHER_INTEGERS_LIST, NEW_INTERGERS_LIST):
+    INTERGERS_LIST = [1,2,3]
 
-def getIntegers(myList):
-    # myList : expected list or tuple
-    # iterate through myList and add all the integers to the new list
-    integers = []
+    print("List_Old")
+    for x in INTERGERS_LIST:
+        print(x)
 
-    return integers
+    NEW_INTERGERS_LIST = INTERGERS_LIST
 
-def getFactor(myList,number):
-    # myList : expected list or tuple
-    # number : integer
-    # iterate through the list and add the number to the list if
-    # it is a factor of the number
-    factors = []
+    print("List_New")
+    print(NEW_INTERGERS_LIST)
 
-    return factors
+#getIntegers(INTERGERS_LIST=True, OTHER_INTEGERS_LIST=True, NEW_INTERGERS_LIST=True)
 
-def getNegatives(myList):
-    # myList : expected list or tuple
-    # iterate through myList and add all the negative numbers to the new list
-    negatives = []
+#DONE
 
-    return negatives
+#-----------------------------------------------------------------------------------------#
 
-def getIntersection(list1,list2):
-    # list 1: expected list or tuple
-    # list 2: expected list or tuple
-    # return a sorted list of numbers that is in both lists
-    # the intersection of the 2 number sets
-    common = []
+def getFactor(FACTORS_LIST,NUMBER):
+    NUMBER = 10
+    FACTORS_LIST = []
+    for x in range(1, NUMBER + 1):
+        if NUMBER % x ==0:
 
-    return common
 
-def getUnion(list1,list2):
-    # list 1: expected list or tuple
-    # list 2: expected list or tuple
-    # return a sorted list of numbers that is in either of the lists
-    # duplicate values will be ignored
-    union = []
+            FACTORS_LIST.append (x)
+    
+    print(FACTORS_LIST)
+    
+#getFactor(FACTORS_LIST=True,NUMBER=True)
 
-    return union   
+#DONE
 
-def getMerge(list1,list2):
-    # list 1: expected list or tuple
-    # list 2: expected list or tuple
-    # add the elements of list2 into list1
-    # if the list2 element is in list1, add it at the position where it occurs in list1
-    # if the list2 element is not in list1, add it to the end
+#-----------------------------------------------------------------------------------------#
 
-    return list1
+def getNegatives(P_LIST, N_LIST):
+    P_LIST = [1,-1 ,2,-2 ,3,-3 ,4,-4 ,5,-5]
+    N_LIST = []
+    for x in P_LIST:
+        if x < 0:
+            P_LIST.remove (x)
+            N_LIST.append (x)
+    print(P_LIST)
+    print(N_LIST)
 
+#getNegatives(P_LIST=True, N_LIST=True)
+
+#DONE
+
+#-----------------------------------------------------------------------------------------#
+
+def getIntersection(LIST_1,LIST_2,LIST_3):
+    LIST_1 =[3,1,5,4,7,6]
+    LIST_2 =[3,9,5,8,2,6]
+    LIST_3 =[x for x in LIST_1 if x in LIST_2]
+    print(LIST_3)
+    
+#getIntersection(LIST_1=True ,LIST_2=True, LIST_3=True)
+
+#DONE
+
+#-----------------------------------------------------------------------------------------#
+
+def getUnion(LIST_1,LIST_2):
+    LIST_1 =[1,2,2,3,4,5]
+    LIST_2 =[4,5,6,7,8,8]
+    UNION = []
+
+    UNION = LIST_1 + LIST_2
+    UNION = list(dict.fromkeys(UNION))
+    print(UNION)
+
+#getUnion(LIST_1=True ,LIST_2=True)
+
+#DONE
+
+#-----------------------------------------------------------------------------------------#
+
+def getMerge(LIST_1,LIST_2,LIST_3):
+    LIST_1 = [1,2,3,3,5]
+    LIST_2 = [4,2,7,8,9]
+    LIST_3 = LIST_1 + LIST_2
+    LIST_3.sort()
+    print(LIST_3)
+
+#getMerge(LIST_1=True ,LIST_2=True, LIST_3=True)
+
+#DONE
+
+#-----------------------------------------------------------------------------------------#
 
 def main():
     easy1 = [5,10,15,2,4,6,8]
